@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
-import demo.layout.com.testapplicatiion.view.RoundIndicatorView;
+import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
 
 
 /**
@@ -29,6 +29,20 @@ public class Fragment1 extends BaseFragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), RoundIndicatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ClientActivity.class);
                 startActivity(intent);
             }
         });

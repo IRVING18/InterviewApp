@@ -1,21 +1,21 @@
 package demo.layout.com.testapplicatiion;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.RemoteException;
+import android.util.Log;
 import android.webkit.WebView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by wangzheng on 2022/8/25 2:35 下午.
  * E-mail : ivring11@163.com
  **/
-class WebViewActivity extends Activity {
+public class WebViewActivity extends AppCompatActivity {
 
     private WebView mMWebView;
 
@@ -39,8 +39,9 @@ class WebViewActivity extends Activity {
             if (iWebServicelInterface != null) {
                 try {
                     String url = iWebServicelInterface.getUrl();
+                    Log.e("wzzzzzzzzz", url);
                     mMWebView.loadUrl(url);
-                } catch (RemoteException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

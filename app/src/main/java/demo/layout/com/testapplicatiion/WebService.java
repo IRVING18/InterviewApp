@@ -11,18 +11,18 @@ import androidx.annotation.Nullable;
  * Created by wangzheng on 2022/8/25 2:28 下午.
  * E-mail : ivring11@163.com
  **/
-class WebService extends Service {
+public class WebService extends Service {
 
-    private final IWebServicelInterface.Stub mStub = new IWebServicelInterface.Stub() {
+    private final IWebServicelInterface.Stub mIBinder = new IWebServicelInterface.Stub() {
         @Override
         public String getUrl() throws RemoteException {
-            return "http://www.baidu.com";
+            return "https://www.163.com";
         }
     };
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return mStub;
+        return mIBinder;
     }
 }

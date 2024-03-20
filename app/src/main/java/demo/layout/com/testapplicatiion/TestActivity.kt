@@ -24,11 +24,10 @@ import java.io.File
  * Created by wangzheng on 2022/11/22 10:35 上午
  * Copyright @ 2022 网易有道. All rights reserved.
  **/
-class TestActivity: BaseActivity() {
+public class TestActivity: BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.activity_test)
-
         val ssiv = findViewById<SubsamplingScaleImageView>(R.id.ssiv)
         loadLargeImage(this,"https://nos.netease.com/ydschool-online/QHHguk7VkT5dCLtgj-hWCg.png",ssiv)
     }
