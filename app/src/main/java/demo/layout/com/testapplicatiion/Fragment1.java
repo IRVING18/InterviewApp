@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
+import demo.layout.com.testapplicatiion.base.BaseFragment;
 
 
 /**
  * Created by wangzheng on 8/17/21 8:26 PM.
  * E-mail : ivring11@163.com
  **/
-public class Fragment1 extends BaseFragment{
+public class Fragment1 extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -43,6 +44,13 @@ public class Fragment1 extends BaseFragment{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ClientActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TestActivity.class);
                 startActivity(intent);
             }
         });
