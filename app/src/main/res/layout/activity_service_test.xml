@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".servicetest.ServiceTestActivity">
+
+    <Button
+        android:id="@+id/btStartService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start方式启动Service"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btStopService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stopService"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btBindService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bind方式启动service"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btBindService2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="多次bind并传入不同connection"
+        android:paddingVertical="10dp"
+        />
+    <Button
+        android:id="@+id/btuUnBindService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="unBind解绑service"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btBindDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用Service的down方法"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btBindGet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用Service的getProcess方法"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btBindStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="调用Service的stopDown方法"
+        android:paddingVertical="10dp"
+        />
+
+</LinearLayout>

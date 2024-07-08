@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
 import demo.layout.com.testapplicatiion.base.BaseFragment;
+import demo.layout.com.testapplicatiion.servicetest.ServiceTestActivity;
+import demo.layout.com.testapplicatiion.servicetest.start.MyStartService;
 
 
 /**
@@ -51,6 +53,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), TestActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ServiceTestActivity.class);
                 startActivity(intent);
             }
         });

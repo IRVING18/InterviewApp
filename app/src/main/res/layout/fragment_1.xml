@@ -29,4 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="大图" />
+
+    <Button
+        android:id="@+id/bt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ServiceTest" />
 </LinearLayout>

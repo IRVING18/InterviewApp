@@ -3,16 +3,18 @@
     package="demo.layout.com.testapplicatiion">
 
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".MyApp"
         android:theme="@style/Theme.TestApplicatiion"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".servicetest.ServiceTestActivity"
+            android:exported="false" />
         <activity android:name=".RoundIndicatorActivity" />
-
         <activity android:name=".Activity2" />
         <activity
             android:name=".MainActivity"
@@ -35,6 +37,7 @@
         <activity
             android:name=".WebViewActivity"
             android:process=":webView" />
+        <activity android:name=".aidldemo.ClientActivity" />
 
         <service
             android:name=".WebService"
@@ -45,14 +48,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-
         <service
             android:name=".aidldemo.BookLibraryService"
             android:enabled="true"
-            android:process=":book"
-            android:exported="true"/>
-
-        <activity android:name=".aidldemo.ClientActivity"/>
+            android:exported="true"
+            android:process=":book" />
+        <service
+            android:name=".servicetest.start.MyStartService"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service
+            android:name=".servicetest.bind.MyBindService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
