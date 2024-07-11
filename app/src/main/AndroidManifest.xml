@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="demo.layout.com.testapplicatiion">
 
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -11,8 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApplicatiion"
         android:usesCleartextTraffic="true">
+        <receiver android:name=".boardcastTest.NetBroadCast">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+<!--        <receiver android:name=".boardcastTest.MyStaticBroadCast">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.wz.test.MyTestBroadCast" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <receiver android:name=".boardcastTest.MyStaticBroadCastPriority100">-->
+<!--            <intent-filter android:priority="100">-->
+<!--                <action android:name="com.wz.test.MyTestBroadCast" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--        <receiver android:name=".boardcastTest.MyStaticBroadCastPriority200">-->
+<!--            <intent-filter android:priority="200">-->
+<!--                <action android:name="com.wz.test.MyTestBroadCast" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
         <activity
             android:name=".servicetest.ServiceTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".boardcastTest.BroadCastTestActivity"
             android:exported="false" />
         <activity android:name=".RoundIndicatorActivity" />
         <activity android:name=".Activity2" />

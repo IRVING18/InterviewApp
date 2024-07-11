@@ -34,7 +34,7 @@ class ServiceTestActivity : AppCompatActivity() {
         //2、且只会和mServiceConnection建立联系
         //3、在unBind时，只需要取消mServiceConnection就会执行onDestroy；
         findViewById<View>(R.id.btBindService).setOnClickListener {
-            bindService(bindServiceIntent, mServiceConnection, BIND_AUTO_CREATE)
+            bindService(startServiceIntent, mServiceConnection, BIND_AUTO_CREATE)
         }
         //多次bind，并传入不同connection时，有影响
         //1、同样只创建Service一次，onBind一次

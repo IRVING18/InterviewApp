@@ -36,6 +36,7 @@ class MyBindService : Service() {
      * 提供给bind形式的，会在ServiceConnection的生命周期的方法中的入参第二参数就是这个IBinder
      */
     override fun onBind(intent: Intent): IBinder {
+        Log.e("wzzz${TAG}", "DownloadBinder.onBind()")
         return mIBinder
     }
 

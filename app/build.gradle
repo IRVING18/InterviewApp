@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "demo.layout.com.testapplicatiion"
+        applicationId "demo.layout.com.testapplicatiion1"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1

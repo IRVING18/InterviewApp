@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".servicetest.ServiceTestActivity">
+
+    <Button
+        android:id="@+id/btSendStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在发送APP，点击发送测试数据"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btSendOrderStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在发送APP，点击发送Order测试数据"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btSendStickyStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在发送APP，发送粘性广播"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btRegisterBroad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在接受端APP动态注册"
+        android:paddingVertical="10dp"
+        />
+
+    <Button
+        android:id="@+id/btUnRegisterBroad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在接受端APP动态取消注册"
+        android:paddingVertical="10dp"
+        />
+
+
+</LinearLayout>
