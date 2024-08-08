@@ -63,6 +63,7 @@
             android:process=":webView" />
         <activity android:name=".aidldemo.ClientActivity" />
 
+        <activity android:name=".workmanager.WorkTestActivity"/>
         <service
             android:name=".WebService"
             android:enabled="true">

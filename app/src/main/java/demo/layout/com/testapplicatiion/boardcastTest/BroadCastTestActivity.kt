@@ -37,7 +37,7 @@ class BroadCastTestActivity : AppCompatActivity() {
             val intent = Intent("com.wz.test.MyTestBroadCast")
             intent.putExtra("wz", "粘性数据")
             Log.e("wzzz","发送粘性广播")
-            sendStickyOrderedBroadcast(intent)
+//            sendStickyOrderedBroadcast(intent)
         }
         findViewById<View>(R.id.btRegisterBroad).setOnClickListener {
             val intentFilter = IntentFilter("com.wz.test.MyTestBroadCast")

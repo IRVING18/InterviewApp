@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
@@ -45,4 +45,15 @@ dependencies {
     implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+
+
+    def work_version = "2.7.0"
+    // Kotlin + coroutines 协程用
+    implementation("androidx.work:work-runtime-ktx:$work_version")
+    // optional - GCMNetworkManager support
+    implementation("androidx.work:work-gcm:$work_version")
+    // optional - Test helpers 测试工具
+//    androidTestImplementation("androidx.work:work-testing:$work_version")
+    // optional - Multiprocess support 多进程支持
+//    implementation("androidx.work:work-multiprocess:$work_version")
 }

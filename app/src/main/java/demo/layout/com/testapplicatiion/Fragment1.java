@@ -11,6 +11,7 @@ import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
 import demo.layout.com.testapplicatiion.base.BaseFragment;
 import demo.layout.com.testapplicatiion.boardcastTest.BroadCastTestActivity;
 import demo.layout.com.testapplicatiion.servicetest.ServiceTestActivity;
+import demo.layout.com.testapplicatiion.workmanager.WorkTestActivity;
 
 
 /**
@@ -67,6 +68,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BroadCastTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WorkTestActivity.class);
                 startActivity(intent);
             }
         });
