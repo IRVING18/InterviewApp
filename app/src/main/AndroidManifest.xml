@@ -64,6 +64,10 @@
         <activity android:name=".aidldemo.ClientActivity" />
 
         <activity android:name=".workmanager.WorkTestActivity"/>
+        <activity android:name=".jobscheduler.JobActivity"/>
+        <service android:name=".jobscheduler.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            />
         <service
             android:name=".WebService"
             android:enabled="true">

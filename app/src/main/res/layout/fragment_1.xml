@@ -45,4 +45,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="WorkerManagerTest" />
+    <Button
+        android:id="@+id/bt8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JobScheduler测试" />
 </LinearLayout>
