@@ -18,7 +18,7 @@ object MyProtoBeanSerializer:Serializer<MyProtoBean> {
     override val defaultValue: MyProtoBean
         get() = MyProtoBean.getDefaultInstance()
 
-    override fun readFrom(input: InputStream): MyProtoBean {
+    override suspend fun readFrom(input: InputStream): MyProtoBean {
         try {
             return MyProtoBean.parseFrom(input)
         } catch (exception: InvalidProtocolBufferException) {
@@ -26,7 +26,7 @@ object MyProtoBeanSerializer:Serializer<MyProtoBean> {
         }
     }
 
-    override fun writeTo(t: MyProtoBean, output: OutputStream) {
+    override suspend fun writeTo(t: MyProtoBean, output: OutputStream) {
         t.writeTo(output)
     }
 }

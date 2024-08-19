@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
 import demo.layout.com.testapplicatiion.base.BaseFragment;
 import demo.layout.com.testapplicatiion.boardcastTest.BroadCastTestActivity;
+import demo.layout.com.testapplicatiion.datastore.multiProcess.MultiActivity;
 import demo.layout.com.testapplicatiion.datastore.preference.PreferencesActivity;
 import demo.layout.com.testapplicatiion.datastore.proto.ProtoActivity;
 import demo.layout.com.testapplicatiion.jobscheduler.JobActivity;
@@ -99,6 +100,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ProtoActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MultiActivity.class);
                 startActivity(intent);
             }
         });

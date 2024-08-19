@@ -42,9 +42,14 @@
             android:name=".datastore.preference.PreferencesActivity"
             android:exported="false" />
         <activity
+            android:name=".datastore.multiProcess.MultiActivity"
+            android:exported="false" />
+        <activity
             android:name=".datastore.proto.ProtoActivity"
             android:exported="false" />
         <activity android:name=".RoundIndicatorActivity" />
+        <service android:name=".datastore.multiProcess.DataStoreService"
+            android:process=":myprocess"/>
         <activity android:name=".Activity2" />
         <activity
             android:name=".MainActivity"
