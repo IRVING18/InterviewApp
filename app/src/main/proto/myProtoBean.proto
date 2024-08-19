@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+//这个路径，是编译器自动生成的MyProtoBean.java的路径
+option java_package = "demo.layout.com.testapplicatiion.datastore.proto";
+option java_multiple_files = true;
+
+message MyProtoBean {
+  optional string name = 1;
+
+  // 自定义枚举
+  enum MyType {
+    NONE = 0;
+    BY_TIME = 1;
+  }
+
+  // 自定义type类型
+  MyType type = 2;
+}

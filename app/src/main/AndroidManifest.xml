@@ -38,6 +38,12 @@
         <activity
             android:name=".boardcastTest.BroadCastTestActivity"
             android:exported="false" />
+        <activity
+            android:name=".datastore.preference.PreferencesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".datastore.proto.ProtoActivity"
+            android:exported="false" />
         <activity android:name=".RoundIndicatorActivity" />
         <activity android:name=".Activity2" />
         <activity

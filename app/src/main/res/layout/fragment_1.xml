@@ -50,4 +50,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JobScheduler测试" />
+    <Button
+        android:id="@+id/bt9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DataStore-Preferences测试" />
+    <Button
+        android:id="@+id/bt10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DataStore-Proto测试" />
 </LinearLayout>

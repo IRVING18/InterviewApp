@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id "com.google.protobuf" version "0.8.17"
 }
 
 android {
@@ -13,6 +15,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,4 +59,35 @@ dependencies {
 //    androidTestImplementation("androidx.work:work-testing:$work_version")
     // optional - Multiprocess support 多进程支持
 //    implementation("androidx.work:work-multiprocess:$work_version")
+
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0-alpha07")
+    implementation("androidx.datastore:datastore:1.0.0-alpha07")
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+
+
+    // protobuf
+    implementation  "com.google.protobuf:protobuf-javalite:3.19.4"
+}
+
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.19.4"
+    }
+
+    // Generates the java Protobuf-lite code for the Protobufs in this project. See
+    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
+    // for more information.
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }
