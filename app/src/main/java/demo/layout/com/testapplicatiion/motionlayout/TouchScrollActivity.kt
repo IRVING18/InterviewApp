@@ -15,6 +15,6 @@ class TouchScrollActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_touch_scroll)
+        setContentView(R.layout.activity_motion_touch_scroll)
     }
 }

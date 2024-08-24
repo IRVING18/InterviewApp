@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/iv_moon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/iv_moon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />v
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        >
+        <KeyFrameSet>
+            <!-- 1、月亮的y轴平移位置 -->
+            <KeyAttribute
+                app:framePosition="25"
+                app:motionTarget="@+id/iv_moon"
+                >
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="-25dp"
+                    />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_moon"
+                >
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="-50dp"
+                    />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="75"
+                app:motionTarget="@+id/iv_moon"
+                >
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="-25dp"
+                    />
+            </KeyAttribute>
+
+            <!-- 2、月亮的颜色变化 -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@+id/iv_moon"
+                >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#ffffff"
+                    />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/iv_moon"
+                >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#ff00ff"
+                    />
+            </KeyAttribute>
+
+            <!-- 3、月亮的旋转 -->
+            <!-- 设置月亮，在50%转360度，在100%时转720度 -->
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_moon"
+                android:rotation="-360"/>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/iv_moon"
+                android:rotation="-720"/>
+
+            <!-- 4、设置隐藏文案的展示 -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@+id/tv"
+                android:alpha="0"/>
+            <KeyAttribute
+                app:framePosition="80"
+                app:motionTarget="@+id/tv"
+                android:alpha="0"/>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/tv"
+                android:alpha="1"/>
+
+            <!-- 5、背景的跟随滑动 -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@+id/iv_bg"
+                >
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="0dp"
+                    />
+            </KeyAttribute>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/iv_bg"
+                >
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="200dp"
+                    />
+            </KeyAttribute>
+
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

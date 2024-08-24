@@ -39,6 +39,9 @@
             android:name=".motionlayout.TouchScrollActivity"
             android:exported="false" />
         <activity
+            android:name=".motionlayout.CoordinatorActivity"
+            android:exported="false" />
+        <activity
             android:name=".boardcastTest.BroadCastTestActivity"
             android:exported="false" />
         <activity
