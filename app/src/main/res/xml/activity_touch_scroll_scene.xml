@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--  一、设置约束 -->
+    <!--  1.1 设置初始状态的约束 -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/iv_moon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </ConstraintSet>
+
+    <!--  1.2 设置初始状态的约束 -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/iv_moon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </ConstraintSet>
+
+    <!--  二、设置动画关联约束  -->
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="3000"
+        >
+
+        <!-- 2.1 设置处理触摸事件，以月亮的中心点作为锚点计算滑动距离 -->
+        <OnSwipe
+            app:touchAnchorId="@id/iv_moon"
+            app:touchAnchorSide="middle"
+            app:dragDirection="dragRight"/>
+
+        <KeyFrameSet>
+            <!-- 2.2 设置三个中间点 -->
+            <!--  25%：月亮在父控件y坐标的0.6位置上  -->
+            <KeyPosition
+                app:framePosition="25"
+                app:motionTarget="@+id/iv_moon"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.7"
+                />
+            <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_moon"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"
+                />
+            <KeyPosition
+                app:framePosition="75"
+                app:motionTarget="@+id/iv_moon"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.7"
+                />
+
+            <!-- 2.2 设置中间点的各个元素的属性 -->
+            <!-- 设置月亮，在50%转360度，在100%时转720度 -->
+            <KeyAttribute
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_moon"
+                android:rotation="-360"/>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/iv_moon"
+                android:rotation="-720"/>
+
+
+            <!-- 设置月亮，其他高阶属性的配置：colorFilter 为白色 -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@+id/iv_moon">
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#FFFFFF"
+                    />
+            </KeyAttribute>
+            <!-- 设置月亮，其他高阶属性的配置：colorFilter 为紫色 -->
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/iv_moon">
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#FF00FF"
+                    />
+            </KeyAttribute>
+
+            <!-- 设置隐藏文案的展示 -->
+            <KeyAttribute
+                app:framePosition="0"
+                app:motionTarget="@+id/tv"
+                android:alpha="0"/>
+            <KeyAttribute
+                app:framePosition="80"
+                app:motionTarget="@+id/tv"
+                android:alpha="0"/>
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@+id/tv"
+                android:alpha="1"/>
+
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>

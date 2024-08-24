@@ -36,6 +36,9 @@
             android:name=".servicetest.ServiceTestActivity"
             android:exported="false" />
         <activity
+            android:name=".motionlayout.TouchScrollActivity"
+            android:exported="false" />
+        <activity
             android:name=".boardcastTest.BroadCastTestActivity"
             android:exported="false" />
         <activity
