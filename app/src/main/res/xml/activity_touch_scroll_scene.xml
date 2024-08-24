@@ -7,8 +7,9 @@
     <!--  1.1 设置初始状态的约束 -->
     <ConstraintSet android:id="@+id/start">
         <Constraint android:id="@+id/iv_moon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="50dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
@@ -17,8 +18,8 @@
     <!--  1.2 设置初始状态的约束 -->
     <ConstraintSet android:id="@+id/end">
         <Constraint android:id="@+id/iv_moon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
@@ -43,32 +44,32 @@
             <KeyPosition
                 app:framePosition="25"
                 app:motionTarget="@+id/iv_moon"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.7"
+                app:keyPositionType="deltaRelative"
+                app:percentY="-1"
                 />
             <KeyPosition
                 app:framePosition="50"
                 app:motionTarget="@+id/iv_moon"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.5"
+                app:keyPositionType="deltaRelative"
+                app:percentY="-0.5"
                 />
             <KeyPosition
                 app:framePosition="75"
                 app:motionTarget="@+id/iv_moon"
-                app:keyPositionType="parentRelative"
-                app:percentY="0.7"
+                app:keyPositionType="deltaRelative"
+                app:percentY="-1"
                 />
 
             <!-- 2.2 设置中间点的各个元素的属性 -->
             <!-- 设置月亮，在50%转360度，在100%时转720度 -->
-            <KeyAttribute
-                app:framePosition="50"
-                app:motionTarget="@+id/iv_moon"
-                android:rotation="-360"/>
-            <KeyAttribute
-                app:framePosition="100"
-                app:motionTarget="@+id/iv_moon"
-                android:rotation="-720"/>
+<!--            <KeyAttribute-->
+<!--                app:framePosition="50"-->
+<!--                app:motionTarget="@+id/iv_moon"-->
+<!--                android:rotation="-360"/>-->
+<!--            <KeyAttribute-->
+<!--                app:framePosition="100"-->
+<!--                app:motionTarget="@+id/iv_moon"-->
+<!--                android:rotation="-720"/>-->
 
 
             <!-- 设置月亮，其他高阶属性的配置：colorFilter 为白色 -->
