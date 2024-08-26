@@ -3,6 +3,10 @@
     package="demo.layout.com.testapplicatiion">
 
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <queries>
+        <package android:name="com.wz.aidlservice"/>
+    </queries>
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -34,6 +38,9 @@
 <!--        </receiver>-->
         <activity
             android:name=".servicetest.ServiceTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aidldemo2.MainClientAActivity"
             android:exported="false" />
         <activity
             android:name=".motionlayout.TouchScrollActivity"

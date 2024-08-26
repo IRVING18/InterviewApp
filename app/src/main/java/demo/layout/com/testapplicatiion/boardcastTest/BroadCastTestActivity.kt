@@ -1,6 +1,5 @@
 package demo.layout.com.testapplicatiion.boardcastTest
 
-import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
@@ -23,19 +22,19 @@ class BroadCastTestActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.btSendStr).setOnClickListener {
             val intent = Intent("com.wz.test.MyTestBroadCast")
-            intent.putExtra("wz", "通过广播传输数据")
+            intent.putExtra("com/wz", "通过广播传输数据")
             Log.e("wzzz","发送广播数据")
             sendBroadcast(intent)
         }
         findViewById<View>(R.id.btSendOrderStr).setOnClickListener {
             val intent = Intent("com.wz.test.MyTestBroadCast")
-            intent.putExtra("wz", "通过广播传输有序数据")
+            intent.putExtra("com/wz", "通过广播传输有序数据")
             Log.e("wzzz","发送有序广播数据")
             sendOrderedBroadcast(intent, null)
         }
         findViewById<View>(R.id.btSendStickyStr).setOnClickListener {
             val intent = Intent("com.wz.test.MyTestBroadCast")
-            intent.putExtra("wz", "粘性数据")
+            intent.putExtra("com/wz", "粘性数据")
             Log.e("wzzz","发送粘性广播")
 //            sendStickyOrderedBroadcast(intent)
         }

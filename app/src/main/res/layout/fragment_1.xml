@@ -17,6 +17,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="aidldemo" />
+    <Button
+        android:id="@+id/bt14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AIDL 测试2，和另一个app通信" />
 
     <Button
         android:id="@+id/bt2"
@@ -75,4 +80,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Motionlayout + Coordinator + AppBarLayout跟随滑动" />
+
 </LinearLayout>

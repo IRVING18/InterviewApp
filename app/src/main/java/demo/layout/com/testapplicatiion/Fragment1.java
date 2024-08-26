@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
+import demo.layout.com.testapplicatiion.aidldemo2.MainClientAActivity;
 import demo.layout.com.testapplicatiion.base.BaseFragment;
 import demo.layout.com.testapplicatiion.boardcastTest.BroadCastTestActivity;
 import demo.layout.com.testapplicatiion.datastore.multiProcess.MultiActivity;
@@ -123,6 +124,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), CoordinatorActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt14).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MainClientAActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,17 @@
+ext {
+    android = [
+        applicationId     : 'com.wz.test',
+        compileSdkVersion : 34  ,
+        buildToolsVersion : "30.0.3",
+        minSdkVersion     : 19,
+        targetSdkVersion  : 30
+    ]
+
+    compiler = [
+//            roomCompiler   : "androidx.room:room-compiler:${dependVersion.room_version}",
+            glideCompiler  : "com.github.bumptech.glide:compiler:4.11.0",
+//            arouterCompiler: "com.alibaba:arouter-compiler:1.2.2",
+    ]
+
+    compilerLibs = compiler.values()
+}

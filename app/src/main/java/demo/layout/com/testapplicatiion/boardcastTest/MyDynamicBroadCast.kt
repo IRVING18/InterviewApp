@@ -20,7 +20,7 @@ class MyDynamicBroadCast : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         //判断是否为某个广播，如果只注册一个Action，其实不写也没关系；但是如果注册了多个action就需要区分下了；
         if (intent.action == WZ_RECEIVER) {
-            val str = intent.getStringExtra("wz")
+            val str = intent.getStringExtra("com/wz")
             Log.e("wzzzzMyDynamicBroadCast", "动态注册-接收：$str")
         }
     }
