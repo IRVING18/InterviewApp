@@ -40,6 +40,9 @@
             android:name=".servicetest.ServiceTestActivity"
             android:exported="false" />
         <activity
+            android:name=".youthTest.YouthTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".aidldemo2.MainClientAActivity"
             android:exported="false" />
         <activity
