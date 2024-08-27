@@ -51,7 +51,8 @@ private val resumedListenerMap = mutableMapOf<View, OnWindowLifecycleCallbacks>(
 open class YouthWindowManagerImpl : YouthWindowManager {
 
     init {
-        BaseApplication.application.registerActivityLifecycleCallbacks(object : FullActivityLifecycleCallbacks() {
+        BaseApplication.application.registerActivityLifecycleCallbacks(object :
+            FullActivityLifecycleCallbacks() {
             override fun onActivityPreResumed(activity: Activity) {
                 floatViewSet.toList().forEach { view ->
                     resumedListenerMap[view]?.onResumedBefore(this@YouthWindowManagerImpl, activity)
@@ -119,13 +120,18 @@ open class YouthWindowManagerImpl : YouthWindowManager {
 //        viewObservable[view]?.set(true)
 
         val layoutParams = (floatWindowGroup.layoutParams as? LayoutParams) ?: run {
-            val type = LayoutParams.LAST_APPLICATION_WINDOW
-            var flag = LayoutParams.FLAG_NOT_FOCUSABLE or LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                LayoutParams.FLAG_LAYOUT_NO_LIMITS or LayoutParams.FLAG_LAYOUT_IN_SCREEN
+            val type = LayoutParams.LAST_APPLICATION_WINDOW //属于Activity层级的Window中最高的99；
+            var flag = LayoutParams.FLAG_NOT_FOCUSABLE or //窗口不能获取焦点，意味着它不会接收输入事件
+                    LayoutParams.FLAG_NOT_TOUCH_MODAL or //允许触摸事件传递给窗口之外的其他窗口，即不影响底层Activity上的其他view的触摸
+                    LayoutParams.FLAG_LAYOUT_NO_LIMITS or //窗口可以布局到屏幕之外
+                    LayoutParams.FLAG_LAYOUT_IN_SCREEN // 可全屏布局，包括状态栏位置
             if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
+                //> 5.0生效：表示窗口会绘制系统状态栏和导航栏的背景
                 flag = flag or LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS
             }
 
+            //window像素格式为透明格式，通常用于简单的全透明窗口，不涉及复杂的颜色计算，性能开销较小。
+            //PixelFormat.RGBA_8888：适合需要高质量图像显示和透明度控制的场景。
             val format = PixelFormat.TRANSPARENT
             val layoutParams = LayoutParams(
                 LayoutParams.WRAP_CONTENT,
@@ -136,6 +142,7 @@ open class YouthWindowManagerImpl : YouthWindowManager {
             )
             layoutParams.gravity = Gravity.START or Gravity.TOP
             if (VERSION.SDK_INT >= VERSION_CODES.P) {
+                //允许窗口内容扩展到显示屏的凹口区域（如刘海屏）
                 layoutParams.layoutInDisplayCutoutMode = LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
             }
 
@@ -287,7 +294,9 @@ private open class FullActivityLifecycleCallbacks : Application.ActivityLifecycl
 
 private class FloatWindowGroup(context: Context) : FrameLayout(context) {
 
-    private val specialNotchSize by lazy { YouthNotchUtils.getSpecialNotchSize(BaseApplication.application).toInt() }
+    private val specialNotchSize by lazy {
+        YouthNotchUtils.getSpecialNotchSize(BaseApplication.application).toInt()
+    }
 
     init {
         this.layoutTransition = null
@@ -316,12 +325,14 @@ private class FloatWindowGroup(context: Context) : FrameLayout(context) {
                 touchParamsX = windowLayoutParams.x
                 touchParamsY = windowLayoutParams.y
             }
+
             MotionEvent.ACTION_MOVE -> {
                 isInTouching = true
                 if (abs(event.rawX - touchScreenX) > touchSlop || abs(event.rawY - touchScreenY) > touchSlop) {
                     return true
                 }
             }
+
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 isInTouching = false
             }
@@ -340,6 +351,7 @@ private class FloatWindowGroup(context: Context) : FrameLayout(context) {
                 touchParamsX = windowLayoutParams.x
                 touchParamsY = windowLayoutParams.y
             }
+
             MotionEvent.ACTION_MOVE -> {
                 isInTouching = true
                 val windowLayoutParams = layoutParams as WindowManager.LayoutParams
@@ -347,6 +359,7 @@ private class FloatWindowGroup(context: Context) : FrameLayout(context) {
                 windowLayoutParams.y = touchParamsY + (event.rawY - touchScreenY).toInt()
                 windowManager?.updateViewLayout(this, windowLayoutParams)
             }
+
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 isInTouching = false
                 checkRange()?.start()
@@ -413,7 +426,8 @@ private class FloatWindowGroup(context: Context) : FrameLayout(context) {
                     (floatWindowGroup.layoutParams as? WindowManager.LayoutParams)?.let { itLayoutParams ->
                         // 不是同一侧,跳过
                         val selfDirection = (endX + selfWidth / 2) > windowWidthHalf
-                        val targetDirection = (itLayoutParams.x + targetView.width / 2) > windowWidthHalf
+                        val targetDirection =
+                            (itLayoutParams.x + targetView.width / 2) > windowWidthHalf
                         if (selfDirection != targetDirection) return@forEach
                         val targetStartY = itLayoutParams.y
                         val targetEndY = targetStartY + targetView.height
@@ -529,7 +543,8 @@ fun Activity.validArea(): Rect {
             window.decorView.rootWindowInsets?.let { windowInsets ->
                 val cutout = windowInsets.displayCutout
                 this.windowManager.defaultDisplay.getRectSize(rect)
-                rect.bottom = rect.bottom + (cutout?.safeInsetTop ?: 0) + (cutout?.safeInsetBottom ?: 0)
+                rect.bottom =
+                    rect.bottom + (cutout?.safeInsetTop ?: 0) + (cutout?.safeInsetBottom ?: 0)
             } ?: let {
                 // 兜底操作,预期来到这个 case 会使用上一次的位置
                 val point = Point()
@@ -537,6 +552,7 @@ fun Activity.validArea(): Rect {
                 rect.set(0, 0, point.x, point.y)
             }
         }
+
         VERSION.SDK_INT >= VERSION_CODES.O -> {
             this.windowManager.defaultDisplay.getRectSize(rect)
             if (YouthRomUtils.isVivo() && YouthNotchUtils.hasNotchAtVIVO(this)) {
@@ -544,6 +560,7 @@ fun Activity.validArea(): Rect {
                 rect.offset(0, -CommonUtil.getStatusBarHeight(this))
             }
         }
+
         else -> {
             this.windowManager.defaultDisplay.getRectSize(rect)
         }
