@@ -40,6 +40,12 @@
             android:name=".servicetest.ServiceTestActivity"
             android:exported="false" />
         <activity
+            android:name=".bigimg.SubsamplingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bigimg.BigImgTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".youthTest.YouthTestActivity"
             android:exported="false" />
         <activity

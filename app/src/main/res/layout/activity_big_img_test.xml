@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用okhttp + SubSamplingImageView，每次都会重下载，没写判断png是否存在的逻辑：建议"/>
+
+    <Button
+        android:id="@+id/bt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用Glide.downOnlyFile + SubSamplingImageView：不建议 \n 本质上和Okhttp下载没啥区别，只是本地是否已经存在图片的逻辑不用自己写了"/>
+</LinearLayout>

@@ -10,6 +10,8 @@ import androidx.annotation.Nullable;
 import demo.layout.com.testapplicatiion.aidldemo.ClientActivity;
 import demo.layout.com.testapplicatiion.aidldemo2.MainClientAActivity;
 import demo.layout.com.testapplicatiion.base.BaseFragment;
+import demo.layout.com.testapplicatiion.bigimg.BigImgTestActivity;
+import demo.layout.com.testapplicatiion.bigimg.SubsamplingActivity;
 import demo.layout.com.testapplicatiion.boardcastTest.BroadCastTestActivity;
 import demo.layout.com.testapplicatiion.datastore.multiProcess.MultiActivity;
 import demo.layout.com.testapplicatiion.datastore.preference.PreferencesActivity;
@@ -61,7 +63,8 @@ public class Fragment1 extends BaseFragment {
         view.findViewById(R.id.bt4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TestActivity.class);
+//                Intent intent = new Intent(getActivity(), SubsamplingActivity.class);
+                Intent intent = new Intent(getActivity(), BigImgTestActivity.class);
                 startActivity(intent);
             }
         });

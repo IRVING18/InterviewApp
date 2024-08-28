@@ -3,7 +3,7 @@ ext {
         applicationId     : 'com.wz.test',
         compileSdkVersion : 34  ,
         buildToolsVersion : "30.0.3",
-        minSdkVersion     : 19,
+        minSdkVersion     : 21,
         targetSdkVersion  : 30
     ]
 
