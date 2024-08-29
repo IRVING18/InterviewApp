@@ -21,6 +21,12 @@
             android:layout_height="wrap_content"
             android:text="用Glide.downOnlyFile + SubSamplingImageView：不建议 \n 本质上和Okhttp下载没啥区别，只是本地是否已经存在图片的逻辑不用自己写了" />
 
+        <Button
+            android:id="@+id/bt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义大图解析器BitmapRegionDecoder" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

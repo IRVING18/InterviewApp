@@ -32,5 +32,8 @@ class BigImgTestActivity : BaseActivity() {
             startActivity(Intent(this, TestActivity::class.java))
         }
 
+        mBinding.bt3.setOnClickListener {
+            startActivity(Intent(this, MyBigIVActivity::class.java))
+        }
     }
 }

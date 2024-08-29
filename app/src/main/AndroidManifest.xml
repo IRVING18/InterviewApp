@@ -46,6 +46,9 @@
             android:name=".bigimg.BigImgTestActivity"
             android:exported="false" />
         <activity
+            android:name=".bigimg.MyBigIVActivity"
+            android:exported="false" />
+        <activity
             android:name=".youthTest.YouthTestActivity"
             android:exported="false" />
         <activity
