@@ -1,10 +1,13 @@
 package demo.layout.com.testapplicatiion.bigimg
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import com.blankj.utilcode.util.ToastUtils
 import demo.layout.com.testapplicatiion.TestActivity
 import demo.layout.com.testapplicatiion.base.BaseActivity
 import demo.layout.com.testapplicatiion.databinding.ActivityBigImgTestBinding
+import java.io.File
 
 /**
  * 有道领世
