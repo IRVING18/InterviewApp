@@ -1,6 +1,7 @@
 package demo.layout.com.testapplicatiion.motionlayoutcompose.consts
 
 import androidx.compose.runtime.Composable
+import demo.layout.com.testapplicatiion.motionlayoutcompose.demo.MoonToolbarDsl
 import demo.layout.com.testapplicatiion.motionlayoutcompose.demo.ToolBarLazyExampleDsl
 import demo.layout.com.testapplicatiion.motionlayoutcompose.inter.ComposeFunc
 
@@ -18,6 +19,7 @@ object ComposeConsts {
 //        get("CollapsingToolbar DSL") { ToolBarExampleDsl() },
 //        get("CollapsingToolbar JSON") { ToolBarExample() },
         get("ToolBarLazyExample DSL") { ToolBarLazyExampleDsl() },
+        get("和view相对的 MoonToolbarDsl") { MoonToolbarDsl() },
 //        get("ToolBarLazyExample JSON") { ToolBarLazyExample() },
 //        get("MotionInLazyColumn Dsl") { MotionInLazyColumnDsl() },
 //        get("MotionInLazyColumn JSON") { MotionInLazyColumn() },
