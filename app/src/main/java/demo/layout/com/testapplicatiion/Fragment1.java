@@ -19,6 +19,7 @@ import demo.layout.com.testapplicatiion.datastore.proto.ProtoActivity;
 import demo.layout.com.testapplicatiion.jobscheduler.JobActivity;
 import demo.layout.com.testapplicatiion.motionlayout.CoordinatorActivity;
 import demo.layout.com.testapplicatiion.motionlayout.TouchScrollActivity;
+import demo.layout.com.testapplicatiion.motionlayoutcompose.MotionMenuActivity;
 import demo.layout.com.testapplicatiion.servicetest.ServiceTestActivity;
 import demo.layout.com.testapplicatiion.workmanager.WorkTestActivity;
 import demo.layout.com.testapplicatiion.youthTest.YouthTestActivity;
@@ -142,6 +143,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), YouthTestActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt133).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MotionMenuActivity.class);
                 startActivity(intent);
             }
         });

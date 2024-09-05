@@ -40,6 +40,12 @@
             android:name=".servicetest.ServiceTestActivity"
             android:exported="false" />
         <activity
+            android:name=".motionlayoutcompose.MotionComposeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".motionlayoutcompose.MotionMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".bigimg.SubsamplingActivity"
             android:exported="false" />
         <activity

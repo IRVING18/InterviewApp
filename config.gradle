@@ -12,6 +12,6 @@ ext {
             glideCompiler  : "com.github.bumptech.glide:compiler:4.11.0",
 //            arouterCompiler: "com.alibaba:arouter-compiler:1.2.2",
     ]
-
+    compose_version = '1.4.3'
     compilerLibs = compiler.values()
 }
