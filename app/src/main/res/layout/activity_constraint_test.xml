@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.helper.widget.Layer
+            android:id="@+id/layer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/design_default_color_secondary_variant"
+            android:padding="15dp"
+            app:constraint_referenced_ids="ifv1,tv_r"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/ifv1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bridge"
+            app:layout_constraintLeft_toLeftOf="@+id/layer"
+            app:layout_constraintTop_toTopOf="@+id/layer"
+            app:round="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="round"
+            app:layout_constraintLeft_toLeftOf="@+id/ifv1"
+            app:layout_constraintRight_toRightOf="@+id/ifv1"
+            app:layout_constraintTop_toBottomOf="@+id/ifv1" />
+
+
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA,tvB,tvC,tvD,tvE,tvF,tvG"
+            app:flow_horizontalGap="30dp"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="none"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_r" />
+
+        <TextView
+            android:id="@+id/tvA"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvE"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="E"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvF"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvG"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow1"
+            android:layout_marginTop="20dp"
+            android:text="chain下：packed"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA1,tvB1,tvC1,tvD1"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/design_default_color_primary"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+        <TextView
+            android:id="@+id/tvA1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow2"
+            android:layout_marginTop="20dp"
+            android:text="chain下：spread_inside"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA2,tvB2,tvC2,tvD2"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/design_default_color_primary"
+            app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+        <TextView
+            android:id="@+id/tvA2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow3"
+            android:layout_marginTop="20dp"
+            android:text="chain下：spread"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA3,tvB3,tvC3,tvD3"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/design_default_color_primary"
+            app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+        <TextView
+            android:id="@+id/tvA3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow4"
+            android:layout_marginTop="20dp"
+            android:text="align：top顶部对齐"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA4,tvB4,tvC4,tvD4,tvE4,tvF4,tvG4,tvH4"
+            app:flow_horizontalGap="30dp"
+            app:flow_horizontalStyle="spread_inside"
+            app:flow_verticalAlign="top"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="chain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+        <TextView
+            android:id="@+id/tvA4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvE4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="E"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvF4"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvG4"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvH4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flow5"
+            android:layout_marginTop="20dp"
+            android:text="align：bottom顶部对齐"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="tvA5,tvB5,tvC5,tvD5,tvE5,tvF5,tvG5,tvH5"
+            app:flow_horizontalGap="30dp"
+            app:flow_horizontalStyle="spread_inside"
+            app:flow_verticalAlign="bottom"
+            app:flow_verticalGap="30dp"
+            app:flow_wrapMode="chain"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+        <TextView
+            android:id="@+id/tvA5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvB5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvC5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvD5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvE5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="E"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvF5"
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvG5"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tvH5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color_ff5269"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

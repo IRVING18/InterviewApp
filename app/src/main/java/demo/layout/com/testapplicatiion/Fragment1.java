@@ -13,6 +13,7 @@ import demo.layout.com.testapplicatiion.base.BaseFragment;
 import demo.layout.com.testapplicatiion.bigimg.BigImgTestActivity;
 import demo.layout.com.testapplicatiion.bigimg.SubsamplingActivity;
 import demo.layout.com.testapplicatiion.boardcastTest.BroadCastTestActivity;
+import demo.layout.com.testapplicatiion.contraint.ConstraintTestActivity;
 import demo.layout.com.testapplicatiion.datastore.multiProcess.MultiActivity;
 import demo.layout.com.testapplicatiion.datastore.preference.PreferencesActivity;
 import demo.layout.com.testapplicatiion.datastore.proto.ProtoActivity;
@@ -150,6 +151,13 @@ public class Fragment1 extends BaseFragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MotionMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.bt16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ConstraintTestActivity.class);
                 startActivity(intent);
             }
         });

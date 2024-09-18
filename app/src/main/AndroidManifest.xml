@@ -37,6 +37,9 @@
 <!--            </intent-filter>-->
 <!--        </receiver>-->
         <activity
+            android:name=".contraint.ConstraintTestActivity"
+            android:exported="false" />
+        <activity
             android:name=".servicetest.ServiceTestActivity"
             android:exported="false" />
         <activity
