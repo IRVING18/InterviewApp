@@ -10,11 +10,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <demo.layout.com.testapplicatiion.view.text.CustomText
+        <demo.layout.com.testapplicatiion.view.text.CustomTextFL
             android:id="@+id/cusT"
             android:layout_width="match_parent"
             android:paddingVertical="8dp"
             android:layout_height="wrap_content"/>
+
+        <demo.layout.com.testapplicatiion.view.text.CustomText
+            android:id="@+id/cusTxt"
+            android:layout_width="match_parent"
+            android:paddingVertical="8dp"
+            android:layout_height="50dp"/>
 
         <Button
             android:id="@+id/bt1"

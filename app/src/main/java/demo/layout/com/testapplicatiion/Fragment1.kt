@@ -20,6 +20,7 @@ import demo.layout.com.testapplicatiion.motionlayout.TouchScrollActivity
 import demo.layout.com.testapplicatiion.motionlayoutcompose.MotionMenuActivity
 import demo.layout.com.testapplicatiion.servicetest.ServiceTestActivity
 import demo.layout.com.testapplicatiion.view.text.CustomText
+import demo.layout.com.testapplicatiion.view.text.CustomTextFL
 import demo.layout.com.testapplicatiion.view.text.SpanBean
 import demo.layout.com.testapplicatiion.workmanager.WorkTestActivity
 import demo.layout.com.testapplicatiion.youthTest.YouthTestActivity
@@ -111,7 +112,7 @@ class Fragment1 : BaseFragment() {
             startActivity(intent)
         }
 
-        val customText = view.findViewById<CustomText>(R.id.cusT)
+        val customTextFl = view.findViewById<CustomTextFL>(R.id.cusT)
         val spanList = mutableListOf<SpanBean>()
         spanList.add(SpanBean("el", "#000000", 24f))
         spanList.add(SpanBean("e", "#E02020", 24f))
@@ -123,7 +124,12 @@ class Fragment1 : BaseFragment() {
         strSpiltList.add("troence")
         strSpiltList.add("phalo")
         strSpiltList.add("graphy")
-        customText.bindData(spanList, strSpiltList)
+        customTextFl.bindData(spanList, strSpiltList)
+        val customText = view.findViewById<CustomText>(R.id.cusTxt)
+        customText.setTextList(arrayListOf("elec","troence","phalo","graphy"))
+        customText.setOnClickListener {
+            customText.animateMagnifierEffect()
+        }
     }
 
 }
