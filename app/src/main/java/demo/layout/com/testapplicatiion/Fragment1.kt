@@ -126,7 +126,7 @@ class Fragment1 : BaseFragment() {
         strSpiltList.add("graphy")
         customTextFl.bindData(spanList, strSpiltList)
         val customText = view.findViewById<CustomText>(R.id.cusTxt)
-        customText.setTextList(arrayListOf("elec","troence","phalo","graphy"))
+        customText.setTextList(spanList, strSpiltList)
         customText.setOnClickListener {
             customText.animateMagnifierEffect()
         }
